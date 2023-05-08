@@ -52,6 +52,15 @@ write action 2 message and close all open streams/readers and socket
 Task 7
 Technically not covered in our assessment but I need to do it to test the code
 
+Troubleshooting
+When running server and localhost:port/index.html, browser does not load page -> googled online and found that need to use printstream to write the return message
+When running server, browser does not load css stylesheet -> in browser inspect sources, style.css has been requested by browser, problem is somewhere in html file or file naming
+detailed explanation of how i fixed above issue:
+using file.toPath().endsWith("png") returned false
+using file.toPath().toString().endsWith("png") returned true
+in order to serve the file correctly, content type message in the PrintStream must match the file eg. text/html for html, text/css for css, image/png for png image
+After matching it properly, the css file loaded
+
 Additional
 Currently using a permanent while loop to run the server
 Use ctrl+c in terminal to end the server

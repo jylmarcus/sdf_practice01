@@ -19,7 +19,7 @@ public class Main {
                 case "--port":
                     port = Integer.parseInt(args[i + 1]);
                     break;
-                case "--docroot":
+                case "--docRoot":
                     String[] tempPaths = args[i+1].split(":");
                     for(String path: tempPaths) {
                         argPaths.add(path);

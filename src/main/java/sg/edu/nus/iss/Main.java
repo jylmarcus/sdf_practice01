@@ -1,18 +1,19 @@
 package sg.edu.nus.iss;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int port = 3000;
         final String DIRECTORY = "./target";
-        List<Path> paths = new LinkedList<Path>();
+        List<Path> paths = new ArrayList<Path>();
         paths.add(Paths.get(DIRECTORY));
 
-        List<String> argPaths = new LinkedList<String>();
+        List<String> argPaths = new ArrayList<String>();
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
                 case "--port":
@@ -34,5 +35,7 @@ public class Main {
                 paths.add(Paths.get(argPath));
             }
         }
+
+        HttpServer server = new HttpServer(port, paths);
     }
 }

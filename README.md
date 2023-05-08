@@ -20,3 +20,31 @@ In order to assign --port and --docroot, use a indexed for loop and a switch cas
 Whats the colon in directories for?
 Looks like they want us to have more than 1 directory, using the colon as a seperator, use split method
 Add to a filler list argPaths then check against static directory and convert to path
+What data structure to use to contain the paths? simple arraylist
+Port and docroot reading implemented in main
+
+Based on assignment brief, it looks like they want us to abstract server functions to HttpServer
+Reuse code from workshops and put into HttpServer
+Create HttpServer with port number and list of paths
+Add a method to check the paths as per task 4
+
+Task 5
+Add a method to start the server from main
+Add thrPool member to HttpServer
+Accept client connection and pass connection to HttpClientConnection handler
+
+Task 6
+Add socket member and constructor in HttpClientConnection
+Need a way to read the input from browser (reading request from browser to server in assignment file)
+Looks like only need to read the first line, so maybe try a BufferedReader.readline()
+split readline by " " then use the elements of string array to fulfill actions in task 6
+Need to pass paths list into httpclientconnection, create a member to store it
+Logic: if the resource exists in any of the filePaths, resource exists and I should return true
+I also need to record which filePath returned true
+Handle this by using two conditionals in a for loop
+Pseudocode: loop through possible file paths 
+if file path exists and is a png, write action 4 message and transfer file, then close all open streams/readers and socket
+if file path exists and is not a png, write action 3 message and transfer file, then close all open streams/readers and socket
+end loop
+not a conditional: if loop ends and client is still running, socket did not close which means resource does not exist, none of the file paths correspond to the resource
+write action 2 message and close all open streams/readers and socket

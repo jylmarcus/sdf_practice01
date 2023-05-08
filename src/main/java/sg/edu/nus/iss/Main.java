@@ -37,5 +37,6 @@ public class Main {
         }
 
         HttpServer server = new HttpServer(port, paths);
+        server.startServer();
     }
 }

@@ -48,3 +48,10 @@ if file path exists and is not a png, write action 3 message and transfer file, 
 end loop
 not a conditional: if loop ends and client is still running, socket did not close which means resource does not exist, none of the file paths correspond to the resource
 write action 2 message and close all open streams/readers and socket
+
+Task 7
+Technically not covered in our assessment but I need to do it to test the code
+
+Additional
+Currently using a permanent while loop to run the server
+Use ctrl+c in terminal to end the server

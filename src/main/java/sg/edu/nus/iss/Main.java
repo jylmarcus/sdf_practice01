@@ -9,7 +9,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
         int port = 3000;
-        final String DIRECTORY = "./target";
+        final String DIRECTORY = "./static";
         List<Path> paths = new ArrayList<Path>();
         paths.add(Paths.get(DIRECTORY));
 

@@ -59,7 +59,7 @@
                 <mainClass>sg.edu.nus.iss.Main</mainClass>
               </manifest>
             </archive>
-      </configuration>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

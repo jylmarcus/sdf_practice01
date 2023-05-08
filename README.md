@@ -64,3 +64,6 @@ After matching it properly, the css file loaded
 Additional
 Currently using a permanent while loop to run the server
 Use ctrl+c in terminal to end the server
+Configure pom.xml file -> look at maven-jar-plugin, copy and paste everything in the configuration tag
+Use mvn package while in root directory (sdf_practice01) to compile the jar file
+Use command "java -jar ./target/sdf_practice01-1.0-SNAPSHOT.jar --port 8080 --docRoot ./target" in command line to run the server
